@@ -1,0 +1,57 @@
+conky.config = {
+    background = true,
+    use_xft = true,
+    xftfont = 'ITC Avant Garde Gothic Pro:size=9',
+    xftalpha = 1,
+    update_interval = 1,
+    total_run_times = 0,
+    own_window = true,
+    own_window_transparent = false,
+    own_window_type = 'desktop',
+    own_window_argb_visual = true,
+    own_window_hints = 'undecorated,below,sticky,skip_taskbar,skip_pager',
+    double_buffer = true,
+    draw_shades = false,
+    draw_outline = false,
+    draw_borders = false,
+    draw_graph_borders = false,
+    stippled_borders = 0,
+    border_width = 1,
+    default_outline_color = '#CCCCCC',
+    gap_x = 50,
+    gap_y = -210,
+    alignment = 'bottom_right',
+    no_buffers = true,
+    uppercase = false,
+    cpu_avg_samples = 2,
+    net_avg_samples = 2,
+    short_units = true,
+    text_buffer_size = 2048,
+    use_spacer = 'none',
+    override_utf8_locale = true,
+    default_color = '#CFCFCF',
+    default_shade_color = '#000000',
+    color1 = '#CFCFCF',
+    oldRed = '#D91133',
+    color3 = '#FFFFFF',
+    own_window_argb_value = 0,
+    own_window_colour = '#000000',
+    xinerama_head = 0
+};
+
+
+conky.text = [[
+    ${goto 80}${color1}${font ITC Avant Garde Gothic Pro:size=70} ${time %H}${font ITC Avant Garde Gothic Pro:size=25}  ${voffset 0}${color3}${font ITC Avant Garde Gothic Pro:size=70}${voffset -45}${time %M}${color1}
+    ${goto 1}${voffset -145}${font ITC Avant Garde Gothic Pro:size=18} ${time %a}
+    ${goto 0}${voffset -1}${font ITC Avant Garde Gothic Pro:bold:size=18} ${time %b} 
+    ${goto 5}${voffset 5}${color3}${font ITC Avant Garde Gothic Pro:bold:size=23}${time %d}${color1}${font ITC Avant Garde Gothic Pro:size=18}
+    ${goto 120}${voffset 10}${execi 360 uname -r}${font ITC Avant Garde Gothic Pro:size=12}
+    ${goto 365}${voffset -105}Cpu Temp${font ITC Avant Garde Gothic Pro:bold:size=17}${color3}
+    ${goto 375}${voffset 10}${hwmon 1 temp 1}°C ${color1}
+    ${goto 200}${voffset 80}${font ITC Avant Garde Gothic Pro:size=15}Mem:${color3} ${font ITC Avant Garde Gothic Pro:bold:size=15}$memperc%${color1}${font ITC Avant Garde Gothic Pro:size=15}
+    ${goto 352}${voffset -21}Cpu:${color3} ${font ITC Avant Garde Gothic Pro:Bold:size=15}${cpu cpu0}%${color1}${font ITC Avant Garde Gothic Pro:size=15}
+
+    #${goto 240}${voffset -42}Swap: ${color3}${font ITC Avant Garde Gothic Pro:bold:size=15}$swapperc%${color1}${font ITC Avant Garde Gothic Pro:size=15}
+
+    ${goto 15}${voffset -63}/: ${color3}${font ITC Avant Garde Gothic Pro:bold:size=15}${fs_free_perc /}%${color1}${font ITC Avant Garde Gothic Pro:size=15} ${goto 100}~: ${color3}${font ITC Avant Garde Gothic Pro:bold:size=15}${fs_free_perc /home}%${font ITC Avant Garde Gothic Pro:size=15}
+]]
